@@ -1,0 +1,2 @@
+
+Select pr1.product_id, Round(sum(us1.units * pr1.price)/sum(us1.units), 2) as Average_Price from Prices pr1 left join UnitsSold us1 on pr1.product_id = us1.product_id AND us1.purchase_date >= pr1.start_date and us1.purchase_date <= pr1.end_date group by pr1.product_id
